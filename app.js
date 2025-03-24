@@ -2,9 +2,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import itemRoutes from './routes/items.js';  
 import { connectDB } from './database/db.js';  
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // middleware parse JSON 
 app.use(express.json());
