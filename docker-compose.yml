@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${Admin}"
+      MONGO_INITDB_ROOT_PASSWORD: "${Admin_PASSWORD}"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - private_net
+
+  node-express:
+    image: mongo-express
+    container_name: node-express
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    environment:
+      ME_CONFIG_MONGODB_SERVER: "${Server}"
+      ME_CONFIG_MONGODB_PORT: "${Port}"
+      ME_CONFIG_MONGODB_ADMINUSERNAME: "${Admin}"
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "${Admin_PASSWORD}"
+      ME_CONFIG_BASICAUTH_USERNAME: "${User}"
+      ME_CONFIG_BASICAUTH_PASSWORD: "${User_PASSWORD}"
+
+    ports:
+      - 8081:8081
+
+    networks:
+      - private_net
+      - public_net
+
+volumes:
+  mongo-data:
+    driver: local
+    external: false
+
+networks:
+  private_net:
+    driver: bridge
+  public_net:
+    driver: bridge
