@@ -3,12 +3,12 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main
+      - feature/Workflow
   pull_request:
     types:
       - closed
     branches:
-      - main
+      - feature/Workflow
 
 jobs:
   build-and-push:
