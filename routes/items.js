@@ -6,8 +6,12 @@ const router = express.Router();
 // GET /items 
 router.get('/', async (req, res) => {
   try {
-    const items = await Item.find(); 
-    res.json(items);
+    const items = await Item.find();
+    if(!items){
+      return res.send("No items found").status(404); 
+    }else {
+      res.json(items);
+    }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

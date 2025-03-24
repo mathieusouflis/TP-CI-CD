@@ -13,6 +13,8 @@ EXPOSE 3000
 ENV DB_HOST=localhost
 ENV DB_PORT=27017
 ENV DB_DATABASE=my_project_db
+ENV DB_USERNAME=root
+ENV DB_PASSWORD=root
 ENV PORT=3000
 
 CMD ["node", "app.js"]
