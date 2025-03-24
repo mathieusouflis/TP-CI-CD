@@ -3,12 +3,12 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - feature/Workflow
+      - main
   pull_request:
     types:
       - closed
     branches:
-      - feature/Workflow
+      - main
 
 jobs:
   build-and-push:
@@ -22,4 +22,4 @@ jobs:
         run: docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" -p "${{ secrets.DOCKERHUB_TOKEN }}"
       
       - name: Build and push Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/tp-ci-cd:test . && docker push ${{ secrets.DOCKERHUB_USERNAME }}/tp-ci-cd:test
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/tp-ci-cd:latest . && docker push ${{ secrets.DOCKERHUB_USERNAME }}/tp-ci-cd:test
