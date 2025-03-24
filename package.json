@@ -13,7 +13,6 @@
   },
   "license": "ISC",
   "author": "Group 1",
-  "type": "commonjs",
   "main": "index.js",
   "type": "module",
   "scripts": {
