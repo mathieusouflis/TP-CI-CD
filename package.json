@@ -1,22 +1,25 @@
 {
   "name": "tp-ci-cd",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "TP-CI-CD",
+  "keywords": [],
+  "homepage": "https://github.com/mathieusouflis/TP-CI-CD#readme",
+  "bugs": {
+    "url": "https://github.com/mathieusouflis/TP-CI-CD/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mathieusouflis/TP-CI-CD.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mathieusouflis/TP-CI-CD/issues"
+  "author": "Group 1",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+        "start": "node app.js",
+    "start-dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/mathieusouflis/TP-CI-CD#readme",
-  "description": "",
   "dependencies": {
     "express": "^4.21.2",
     "mongoose": "^8.12.2"
