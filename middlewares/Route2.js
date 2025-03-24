@@ -1,5 +1,5 @@
 import express from 'express';
-import { connectDB } from '.db.js'; // Import de la connexion MongoDB
+import { connectDB } from '../database/db.js'; // Import de la connexion MongoDB
 import mongoose from 'mongoose';
 
 // Initialiser Express
